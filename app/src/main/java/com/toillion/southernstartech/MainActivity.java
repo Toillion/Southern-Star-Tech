@@ -16,6 +16,27 @@ import com.github.barteksc.pdfviewer.PDFView;
 
 public class MainActivity extends AppCompatActivity {
 
+    /************************************************************
+     * Here we have a list of work types where you can click on
+     * one and it will load the PdfView page with the pdf file
+     * that goes along with it.
+     *
+     * For this to work, the PDF files must be added to the assets
+     * folder found at app/java/assets.
+     * The naming of the PDF files is important. They must be named
+     * the same as the work type they go along with. They must be all
+     * lowercase, have underscores instead of spaces, be numbered
+     * starting with 1 for the order you want them to be displayed,
+     * and end with .pdf
+     * EXAMPLE: if you have two PDFs that go along with the work
+     * type "This is a WORK type", the files must be named
+     * this_is_a_work_type_1.pdf this_is_a_work_type_1.pdf
+     *
+     * To add to the list of work types, just add to the "data"
+     * array seen below in this file. I left my examples along with
+     * some PDFs in the assets folder that can be removed
+     ************************************************************/
+
     // Recycler View is the list of work items
     private RecyclerView workTypesRV;
     private RecyclerView.LayoutManager layoutManager;
