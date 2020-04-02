@@ -5,11 +5,14 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
+
+import com.github.barteksc.pdfviewer.PDFView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,7 +50,12 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                         TextView t = (TextView) v;
-                        String text = t.getText().toString();
+                        String name = t.getText().toString();
+                        // set up to load the PDF View class
+                        Intent intent = new Intent(getApplicationContext(), PdfView.class);
+                        // Pass the name of the work type which we will use load the correct pdf
+                        intent.putExtra("name", name);
+                        startActivity(intent);
                     }
                 }
         );
